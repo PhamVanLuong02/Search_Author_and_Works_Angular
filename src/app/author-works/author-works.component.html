@@ -1,0 +1,21 @@
+<a routerLink="/" class="badge badge-warning" style="font-size: 32px; width: 100%; justify-content: center;">WEBSIDE TRA CỨU TÁC GIẢ VÀ TÁC PHẨM</a>
+<br><br>
+<h1 style="text-align: center;">TRANG XEM DANH SÁCH TÁC PHẨM</h1>
+<h2 style="text-align: center;"><b> {{ authorKey }}</b></h2>
+<br><br>
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+  <div *ngFor="let work of worksList">
+    <div class="card bg-dark text-white" style="width: 888px; text-align: center;">
+      <div class="card-body"><b>{{ work.title }}</b></div>
+    </div>
+    <br>
+  </div>
+</div>
+<br>
+
+<div style="display: flex; justify-content: center; align-items: center; height: 100%; margin-top: -360px;">
+  <button  class="badge badge-warning" style="font-size: 22px;" [disabled]="currentPage == 1" (click)="goToPreviousPage()">Previous</button>
+  <b>Page {{currentPage}} of {{totalPages}}</b>
+  <button  class="badge badge-warning" style="font-size: 22px;" [disabled]="currentPage == totalPages" (click)="goToNextPage()">Next</button>
+</div>
+

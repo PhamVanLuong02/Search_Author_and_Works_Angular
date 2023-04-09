@@ -1,0 +1,58 @@
+<a routerLink="/" class="badge badge-warning" style="font-size: 32px; width: 100%; justify-content: center;">WEBSIDE TRA CỨU TÁC GIẢ VÀ TÁC PHẨM</a>
+<br>
+<br>
+<h1 style="text-align: center;">TRANG CHI TIẾT TÁC GIẢ</h1>
+<div class="container">
+  <table class="table">
+    <tbody>
+      <tr class="table-success">
+        <td>NAME</td>
+        <td>{{authorInfo.name}}</td>
+      </tr>
+      <tr class="table-primary">
+        <td>PERSONAL NAME</td>
+        <td>{{authorInfo.personal_name}}</td>
+      </tr>
+      <tr class="table-success">
+        <td>DEATH DATE</td>
+        <td>{{authorInfo.death_date}}</td>
+      </tr>
+      <tr class="table-danger">
+        <td>ALTERNATE NAME</td>
+        <td>{{authorInfo.alternate_names}}</td>
+      </tr>
+      <tr class="table-info">
+        <td>CREATED</td>
+        <td>{{authorInfo.created.value |date:'dd/MM/yyyy'}}</td>
+      </tr>
+      <tr class="table-warning">
+        <td>LAST MODIFIED</td>
+        <td>{{authorInfo.last_modified.value|date:'dd/MM/yyyy'}}</td>
+      </tr>
+      <tr class="table-active">
+        <td>LATEST REVISION</td>
+        <td>{{authorInfo.latest_revision}}</td>
+      </tr>
+      <tr class="table-warning">
+        <td>KEY</td>
+        <td>{{authorInfo.key}}</td>
+      </tr>
+      <tr class="table-danger">
+        <td>BIRTH DATE</td>
+        <td>{{authorInfo.birth_date}}</td>
+      </tr>
+      <tr class="table-success">
+        <td>REVISION</td>
+        <td>{{authorInfo.revision}}</td>
+      </tr>
+      <tr class="table-info">
+        <td>TYPE</td>
+        <td>{{authorInfo.type.key}}</td>
+      </tr>
+      <tr class="table-active">
+        <td>REMOTE ID</td>
+        <td>{{authorInfo.remote_ids.wikidata}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

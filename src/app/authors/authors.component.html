@@ -1,0 +1,33 @@
+
+
+<a routerLink="/" class="badge badge-warning" style="font-size: 32px; width: 100%; justify-content: center;">WEBSIDE TRA CỨU TÁC GIẢ VÀ TÁC PHẨM</a>
+
+<form (ngSubmit)="onSearch()">
+  <label>
+    <input [(ngModel)]="query" (ngModelChange)="onQueryChange()" name="query" type="text" placeholder="Enter author name"/>
+  </label>
+  <button type="submit">Search</button>
+</form>
+
+<div class="card-group" *ngFor="let author of authorsList" style="width: 300px; height: 400px; display: inline-block; padding-left: 45px;" >
+  <div class="card"  >
+      <img class="card-img-top" src="https://www.gettyimages.in/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg" alt="">
+      <div class="card-body">
+          <h6 class="card-title">{{ author.name }}</h6>
+          <h6 style="height: 80px;" class="card-title"> Số lượng bài viết: {{ author.work_count }}</h6>
+          <div style="display: inline-block;">
+            <button style="width: 100px; " class="btn btn-primary" routerLink="/author/{{ author.key }}">Detail</button>
+            <button style="width: 100px;" class="btn btn-primary" routerLink="/author/{{ author.key }}/works">Works</button>
+          </div>
+      </div>
+      <div class="card-footer text-muted">
+        {{ author.key }}
+      </div>
+  </div>
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center; height: 100%; margin-top: -360px;">
+  <button  class="badge badge-warning" style="font-size: 22px;" [disabled]="currentPage == 1" (click)="goToPreviousPage()">Previous</button>
+  <b>Page {{currentPage}} of {{totalPages}}</b>
+  <button  class="badge badge-warning" style="font-size: 22px;" [disabled]="currentPage == totalPages" (click)="goToNextPage()">Next</button>
+</div>
